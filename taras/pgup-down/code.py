@@ -2,10 +2,17 @@
 print("Starting")
 from kmk.hid import HIDModes
 import board
+import neopixel
 
 from kmk.kmk_keyboard import KMKKeyboard
 from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
+
+# --- Turn off NeoPixel ---
+pixel_pin = board.IO21
+with neopixel.NeoPixel(pixel_pin, 1) as pixel:
+    pixel.fill(0) # Turn off
+# Pin is now deinitialized after exiting the 'with' block
 
 keyboard = KMKKeyboard()
 
