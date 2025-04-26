@@ -9,7 +9,7 @@ from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
 
 # --- Turn off NeoPixel ---
-neopixel.NeoPixel(board.NEOPIXEL, 1) as pixel:
+with neopixel.NeoPixel(board.NEOPIXEL, 1) as pixel:
     pixel.fill(0) # Turn off
 # Pin is now deinitialized after exiting the 'with' block
 
