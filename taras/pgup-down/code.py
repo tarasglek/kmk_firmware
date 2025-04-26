@@ -19,7 +19,7 @@ keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
 keyboard.keymap = [
     # Reordered to match physical wiring: IO8=2, IO9=1, IO10=4, IO11=3
-    [KC.SPACE, KC.PGDN, KC.PGUP, KC.N3]
+    [KC.SPACE, KC.PGDN, KC.PGUP, KC.LCTL(KC.W)] # IO11 -> Ctrl+W
 ]
 
 if __name__ == '__main__':
