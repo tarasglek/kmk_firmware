@@ -2,8 +2,6 @@
 print("Starting")
 from kmk.hid import HIDModes
 import board
-import neopixel
-import time
 from kmk.kmk_keyboard import KMKKeyboard
 from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
@@ -25,14 +23,6 @@ keyboard.keymap = [
 ]
 
 if __name__ == '__main__':
-    pixels = neopixel.NeoPixel(board.NEOPIXEL, 1)
-    while True:
-        pixels.fill(0xADAF00)
-        time.sleep(1)
-        pixels.fill(0)
-        time.sleep(1)
-
-    # keyboard.go()
+    keyboard.go()
 #    keyboard.go(hid_type=HIDModes.BLE, secondary_hid_type=HIDModes.USB, ble_name='1234Keyboard')
-    pass
 
