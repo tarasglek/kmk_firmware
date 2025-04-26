@@ -4,7 +4,7 @@ from kmk.hid import HIDModes
 import board
 from kmk.kmk_keyboard import KMKKeyboard
 from kmk.keys import KC
-from kmk.modules.tapdance import TapDance
+from kmk.modules.holdtap import HoldTap
 from kmk.scanners import DiodeOrientation
 
 
@@ -13,8 +13,11 @@ from kmk.scanners import DiodeOrientation
 keyboard = KMKKeyboard()
 
 # --- Modules ---
-tapdance = TapDance()
-keyboard.modules.append(tapdance)
+# Use HoldTap for tap-vs-hold behavior
+holdtap = HoldTap()
+# Optional: Set hold time (milliseconds). Default is usually 300.
+# holdtap.tap_time = 250
+keyboard.modules.append(holdtap)
 
 # Row pin IO12
 keyboard.row_pins = (board.IO12,)
@@ -22,8 +25,8 @@ keyboard.row_pins = (board.IO12,)
 keyboard.col_pins = (board.IO8, board.IO9, board.IO10, board.IO11)
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
-# Define Tap Dance key: Tap for Alt+Left (Back), Hold for Ctrl+W (Close)
-BACK_OR_CLOSE = KC.TD(KC.LALT(KC.LEFT), KC.LCTL(KC.W))
+# Use KC.HT: Tap=Alt+Left, Hold=Ctrl+W. prefer_hold=False triggers hold if held past tap_time.
+BACK_OR_CLOSE = KC.HT(KC.LALT(KC.LEFT), KC.LCTL(KC.W), prefer_hold=False)
 
 keyboard.keymap = [
     # Reordered to match physical wiring: IO8=2, IO9=1, IO10=4, IO11=3
