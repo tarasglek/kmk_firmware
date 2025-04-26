@@ -9,8 +9,7 @@ from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
 
 # --- Turn off NeoPixel ---
-pixel_pin = board.IO21
-with neopixel.NeoPixel(pixel_pin, 1) as pixel:
+neopixel.NeoPixel(board.NEOPIXEL, 1) as pixel:
     pixel.fill(0) # Turn off
 # Pin is now deinitialized after exiting the 'with' block
 
@@ -28,6 +27,6 @@ keyboard.keymap = [
 ]
 
 if __name__ == '__main__':
-    keyboard.go()
+    # keyboard.go()
 #    keyboard.go(hid_type=HIDModes.BLE, secondary_hid_type=HIDModes.USB, ble_name='1234Keyboard')
     pass
