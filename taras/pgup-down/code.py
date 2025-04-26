@@ -1,8 +1,7 @@
+# https://circuitpython.org/board/waveshare_esp32_s3_zero/
 print("Starting")
-
+from kmk.hid import HIDModes
 import board
-
-print(dir(board))
 
 from kmk.kmk_keyboard import KMKKeyboard
 from kmk.keys import KC
@@ -23,3 +22,5 @@ keyboard.keymap = [
 
 if __name__ == '__main__':
     keyboard.go()
+#    keyboard.go(hid_type=HIDModes.BLE, secondary_hid_type=HIDModes.USB, ble_name='1234Keyboard')
+    pass
