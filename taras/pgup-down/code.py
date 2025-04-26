@@ -23,7 +23,7 @@ keyboard.col_pins = (board.IO8, board.IO9, board.IO10, board.IO11)
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
 # Define Tap Dance key: Tap for Alt+Left (Back), Hold for Ctrl+W (Close)
-BACK_OR_CLOSE = KC.TD((KC.LALT(KC.LEFT), KC.LCTL(KC.W)))
+BACK_OR_CLOSE = KC.TD(KC.LALT(KC.LEFT), KC.LCTL(KC.W))
 
 keyboard.keymap = [
     # Reordered to match physical wiring: IO8=2, IO9=1, IO10=4, IO11=3
