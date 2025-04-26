@@ -11,9 +11,9 @@ from kmk.scanners import DiodeOrientation
 keyboard = KMKKeyboard()
 
 # Row pin IO12
-keyboard.row_pins = (board.GP12,)
+keyboard.row_pins = (board.IO12,)
 # Column pins IO8, IO9, IO10, IO11
-keyboard.col_pins = (board.GP8, board.GP9, board.GP10, board.GP11)
+keyboard.col_pins = (board.IO8, board.IO9, board.IO10, board.IO11)
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
 keyboard.keymap = [
