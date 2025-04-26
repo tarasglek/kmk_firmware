@@ -17,7 +17,8 @@ keyboard.col_pins = (board.IO8, board.IO9, board.IO10, board.IO11)
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
 keyboard.keymap = [
-    [KC.N1, KC.N2, KC.N3, KC.N4] # Keys for row 0, columns 0-3
+    # Reordered to match physical wiring: IO8=2, IO9=1, IO10=4, IO11=3
+    [KC.N2, KC.N1, KC.N4, KC.N3]
 ]
 
 if __name__ == '__main__':
