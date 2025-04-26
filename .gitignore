@@ -182,3 +182,4 @@ cython_debug/
 
 # Mac Finder
 .DS_Store
+.aider*

@@ -18,7 +18,7 @@ keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
 keyboard.keymap = [
     # Reordered to match physical wiring: IO8=PGUP, IO9=1, IO10=PGDN, IO11=3
-    [KC.PGUP, KC.N1, KC.PGDN, KC.N3]
+    [KC.N2, KC.PGUP, KC.PGDN, KC.N3]
 ]
 
 if __name__ == '__main__':
